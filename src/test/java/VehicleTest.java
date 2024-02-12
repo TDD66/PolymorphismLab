@@ -18,7 +18,13 @@ public class VehicleTest {
     }
 
     @Test
-    void testDrive(){
+    void testDriveNoParams(){
+        vehicle.refuel(20);
+        vehicle.drive();
+        assertThat(vehicle.getCurrentFuel()).isEqualTo(0);
+    }
+    @Test
+    void testDriveWithDistanceParam(){
         vehicle.refuel(20);
         vehicle.drive(15);
         assertThat(vehicle.getCurrentFuel()).isEqualTo(5);

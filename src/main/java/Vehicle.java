@@ -20,6 +20,10 @@ public class Vehicle {
         this.currentFuel = Math.min(this.currentFuel + addFuel, this.MAX_FUEL);
     }
 
+    public void drive(){
+        this.currentFuel = 0;
+    }
+
     public void drive(int distance){
         if(distance < 0 || distance > this.currentFuel){
             return;
