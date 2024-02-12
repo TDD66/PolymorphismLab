@@ -30,4 +30,8 @@ public class Vehicle {
     public int getCurrentFuel() {
         return currentFuel;
     }
+
+    public int getVALUE(){
+        return this.VALUE;
+    }
 }
