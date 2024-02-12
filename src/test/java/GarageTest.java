@@ -12,8 +12,8 @@ public class GarageTest {
     @BeforeEach
     void setUp(){
         garage = new Garage();
-        car = new Vehicle("My Car", 4, 100, 2100);
-        bus = new Vehicle("My Bus", 20, 300, 8000);
+//        Truck = new Truck("My Truck", 18, 100, 2100, 1000);
+        bus = new Bus("My Bus", 4, 300, 8000, 20);
     }
 
     @Test

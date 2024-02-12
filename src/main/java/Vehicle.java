@@ -1,6 +1,6 @@
-public class Vehicle {
+public abstract class Vehicle {
     private String name;
-    private int numberOfWheels;
+    private final int numberOfWheels;
     private final int MAX_FUEL;
     private int currentFuel;
     private final int VALUE;
