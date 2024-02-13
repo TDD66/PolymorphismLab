@@ -1,7 +1,4 @@
-import models.Bus;
-import models.Garage;
-import models.LandVehicle;
-import models.Truck;
+import models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +9,14 @@ public class GarageTest {
     Garage garage;
     LandVehicle truck;
     LandVehicle bus;
+    Plane plane;
 
     @BeforeEach
     void setUp(){
         garage = new Garage();
-        truck = new Truck("My models.Truck", 18, 100, 2100, 1000);
+        truck = new Truck("My models.Truck", 18, 100, 2000, 1000);
         bus = new Bus("My models.Bus", 4, 300, 8000, 20);
+        plane = new Plane(4, 1000);
     }
 
     @Test
@@ -36,6 +35,7 @@ public class GarageTest {
     void testCalculateTotalValue(){
         garage.addVehicle(truck);
         garage.addVehicle(bus);
-        assertThat(garage.calculateTotalValue()).isEqualTo(10100);
+        garage.addVehicle(plane);
+        assertThat(garage.calculateTotalValue()).isEqualTo(11000);
     }
 }

@@ -1,31 +1,33 @@
 package models;
 
+import interfaces.IIncreaseValue;
+
 import java.util.ArrayList;
 
 public class Garage {
-    private ArrayList<LandVehicle> landVehicles;
+    private ArrayList<IIncreaseValue> vehicles;
 
     public Garage(){
-        this.landVehicles = new ArrayList<>();
+        this.vehicles = new ArrayList<>();
     }
 
     public int countVehicles(){
-        return this.landVehicles.size();
+        return this.vehicles.size();
     }
 
     public int calculateTotalValue(){
         int total = 0;
-        for(LandVehicle landVehicle : landVehicles){
-            total += landVehicle.getValue();
+        for(IIncreaseValue vehicle : vehicles){
+            total += vehicle.getValue();
         }
         return total;
     }
 
-    public void addVehicle(LandVehicle landVehicle){
-        this.landVehicles.add(landVehicle);
+    public void addVehicle(IIncreaseValue vehicle){
+        this.vehicles.add(vehicle);
     }
 
-    public ArrayList<LandVehicle> getVehicles(){
-        return this.landVehicles;
+    public ArrayList<IIncreaseValue> getVehicles(){
+        return this.vehicles;
     }
 }
