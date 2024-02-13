@@ -3,15 +3,15 @@ package models;
 import interfaces.IIncreaseValue;
 
 public abstract class LandVehicle implements IIncreaseValue {
-    private String name;
-    private int numberOfWheels;
+    private final String NAME;
+    private final int NUMBER_OF_WHEELS;
     private final int MAX_FUEL;
     private int currentFuel;
     protected int value;
 
-    public LandVehicle(String name, int numberOfWheels, int MAX_FUEL, int value){
-        this.name = name;
-        this.numberOfWheels = numberOfWheels;
+    public LandVehicle(String NAME, int NUMBER_OF_WHEELS, int MAX_FUEL, int value){
+        this.NAME = NAME;
+        this.NUMBER_OF_WHEELS = NUMBER_OF_WHEELS;
         this.MAX_FUEL = MAX_FUEL;
         this.value = value;
         this.currentFuel = 0;
