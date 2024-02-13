@@ -1,3 +1,4 @@
+import models.Truck;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,7 @@ public class TruckTest {
 
     @BeforeEach
     void setUp(){
-        truck = new Truck("My Truck", 20, 600, 12000, 6000);
+        truck = new Truck("My models.Truck", 20, 600, 12000, 6000);
     }
 
     @Test
@@ -22,6 +23,12 @@ public class TruckTest {
         truck.load(1000);
         truck.unload();
         assertThat(truck.getCurrentCargo()).isZero();
+    }
+
+    @Test
+    void testUpgrade(){
+        truck.upgrade();
+        assertThat(truck.getValue()).isEqualTo(12100);
     }
 
 

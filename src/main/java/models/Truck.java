@@ -1,4 +1,6 @@
-public class Truck extends Vehicle{
+package models;
+
+public class Truck extends LandVehicle {
 
     private final int MAX_CARGO;
     private int currentCargo;
@@ -18,6 +20,11 @@ public class Truck extends Vehicle{
             return;
         }
         this.currentCargo = Math.min(MAX_CARGO, this.currentCargo + newCargo);
+    }
+
+    @Override
+    public void upgrade(){
+        this.value += 100;
     }
 
     public int getCurrentCargo() {

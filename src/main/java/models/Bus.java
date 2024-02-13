@@ -1,9 +1,11 @@
-public class Bus extends Vehicle{
+package models;
+
+public class Bus extends LandVehicle {
     private final int MAX_CAPACITY;
     private int currentCapacity;
 
-    public Bus(String name, int numberOfWheels, int MAX_FUEL, int VALUE, int MAX_CAPACITY){
-        super(name, numberOfWheels, MAX_FUEL, VALUE);
+    public Bus(String name, int numberOfWheels, int MAX_FUEL, int value, int MAX_CAPACITY){
+        super(name, numberOfWheels, MAX_FUEL, value);
         this.MAX_CAPACITY = MAX_CAPACITY;
         this.currentCapacity = 0;
     }
@@ -20,6 +22,11 @@ public class Bus extends Vehicle{
             return;
         }
         this.currentCapacity = Math.min(this. MAX_CAPACITY, this.currentCapacity + newPassengers);
+    }
+
+    @Override
+    public void upgrade(){
+        this.value += 50;
     }
     public int getCurrentCapacity() {
         return currentCapacity;

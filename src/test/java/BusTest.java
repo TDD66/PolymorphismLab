@@ -1,3 +1,4 @@
+import models.Bus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ public class BusTest {
     Bus bus;
     @BeforeEach
     void setUp(){
-        bus = new Bus("My Bus", 4, 300, 8000, 20);
+        bus = new Bus("My models.Bus", 4, 300, 8000, 20);
     }
 
     @Test
@@ -48,5 +49,11 @@ public class BusTest {
         bus.pickUpPassengers(11);
         bus.dropPassengers(6);
         assertThat(bus.getCurrentCapacity()).isEqualTo(5);
+    }
+
+    @Test
+    void testUpgrade(){
+        bus.upgrade();
+        assertThat(bus.getValue()).isEqualTo(8050);
     }
 }

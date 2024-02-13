@@ -1,15 +1,19 @@
-public abstract class Vehicle {
+package models;
+
+import interfaces.IIncreaseValue;
+
+public abstract class LandVehicle implements IIncreaseValue {
     private String name;
-    private final int numberOfWheels;
+    private int numberOfWheels;
     private final int MAX_FUEL;
     private int currentFuel;
-    private final int VALUE;
+    protected int value;
 
-    public Vehicle(String name, int numberOfWheels, int MAX_FUEL, int VALUE){
+    public LandVehicle(String name, int numberOfWheels, int MAX_FUEL, int value){
         this.name = name;
         this.numberOfWheels = numberOfWheels;
         this.MAX_FUEL = MAX_FUEL;
-        this.VALUE = VALUE;
+        this.value = value;
         this.currentFuel = 0;
     }
 
@@ -31,11 +35,14 @@ public abstract class Vehicle {
         this.currentFuel -= distance;
     }
 
+    @Override
+    public abstract void upgrade();
+
     public int getCurrentFuel() {
         return currentFuel;
     }
 
-    public int getVALUE(){
-        return this.VALUE;
+    public int getValue(){
+        return this.value;
     }
 }
